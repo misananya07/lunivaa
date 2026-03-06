@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Symptom and Mood Log | LUNIVA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eb477e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #eb477e;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .custom-slider {
+            -webkit-appearance: none;
+            height: 8px;
+            background: #f1dae2;
+            border-radius: 4px;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181113] antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#eb477e]/10 bg-white px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#181113] text-xl font-bold leading-tight tracking-tight">LUNIVA</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-[#181113]/70 hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary" href="#">Cycle Track</a>
+<a class="text-[#181113]/70 hover:text-primary text-sm font-medium transition-colors" href="#">Insights</a>
+<a class="text-[#181113]/70 hover:text-primary text-sm font-medium transition-colors" href="#">Community</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile picture of a young woman smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEiweWlFlgdx6PeJ2nWewNFV2xuc-wll8zmm_TuvicUw7WGA9yGcp5aJNsZCQRgOFO9OEkWkyEbQqQ1uAepdowkOaf3NZpWVr2pCBscne7Hv3IIPISTekHE4RM6xugpYUN33SMy5mYzgMsr6y2UBO13cMzdRxPJACpJfbmf1Ce6Pex79LfxWQuLEVTRlD8iFRmiqX7T2nJ5socmIC2ifrIDUABzoGfoenl8Zge7KDACNUKwimbsq5zIu42lUES9gvDjvsox2C-vYc");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[800px] w-full px-4">
+<!-- Welcome Section -->
+<div class="mb-8">
+<div class="flex items-center gap-2 text-primary/60 text-sm font-medium mb-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Tuesday, October 24th</span>
+</div>
+<h1 class="text-[#181113] text-4xl font-black leading-tight tracking-tight">How are you feeling, Sarah?</h1>
+<p class="text-[#181113]/60 text-lg mt-1">Logging your symptoms helps us provide better insights for your cycle.</p>
+</div>
+<!-- Mood Grid -->
+<section class="mb-10">
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sentiment_satisfied</span>
+                        Your Mood
+                    </h2>
+<div class="grid grid-cols-3 md:grid-cols-5 gap-4">
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-primary bg-primary/5 transition-all">
+<span class="text-4xl">⚡</span>
+<span class="font-semibold text-sm">Energetic</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm">
+<span class="text-4xl">😌</span>
+<span class="font-medium text-sm">Calm</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm">
+<span class="text-4xl">😤</span>
+<span class="font-medium text-sm">Irritable</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm">
+<span class="text-4xl">😔</span>
+<span class="font-medium text-sm">Sad</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm">
+<span class="text-4xl">😰</span>
+<span class="font-medium text-sm">Anxious</span>
+</button>
+</div>
+</section>
+<!-- Physical Symptoms -->
+<section class="mb-10 bg-white p-6 rounded-xl shadow-sm border border-primary/5">
+<h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">health_and_safety</span>
+                        Physical Symptoms
+                    </h2>
+<div class="space-y-8">
+<!-- Symptom: Cramps -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="flex items-center gap-3 font-semibold text-lg">
+<span class="p-2 bg-pink-50 rounded-lg text-primary">🩸</span>
+                                    Cramps
+                                </label>
+<span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Moderate</span>
+</div>
+<input class="w-full custom-slider" max="100" min="0" type="range" value="45"/>
+<div class="flex justify-between mt-2 text-xs font-medium text-[#181113]/40 uppercase tracking-widest">
+<span>None</span>
+<span>Mild</span>
+<span>Intense</span>
+</div>
+</div>
+<!-- Symptom: Bloating -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="flex items-center gap-3 font-semibold text-lg">
+<span class="p-2 bg-pink-50 rounded-lg text-primary">🎈</span>
+                                    Bloating
+                                </label>
+<span class="text-sm font-medium text-[#181113]/40 bg-background-light px-3 py-1 rounded-full">None</span>
+</div>
+<input class="w-full custom-slider opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all" max="100" min="0" type="range" value="0"/>
+<div class="flex justify-between mt-2 text-xs font-medium text-[#181113]/40 uppercase tracking-widest">
+<span>None</span>
+<span>Mild</span>
+<span>Intense</span>
+</div>
+</div>
+<!-- Symptom Tags -->
+<div class="pt-4 border-t border-background-light">
+<p class="text-sm font-bold text-[#181113]/70 mb-4">Other symptoms today:</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-semibold flex items-center gap-2">
+                                    Headache <span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="px-4 py-2 rounded-full border border-[#181113]/10 bg-white text-[#181113]/70 text-sm font-medium hover:border-primary transition-all">
+                                    Acne
+                                </button>
+<button class="px-4 py-2 rounded-full border border-[#181113]/10 bg-white text-[#181113]/70 text-sm font-medium hover:border-primary transition-all">
+                                    Backache
+                                </button>
+<button class="px-4 py-2 rounded-full border border-[#181113]/10 bg-white text-[#181113]/70 text-sm font-medium hover:border-primary transition-all">
+                                    Tender Breasts
+                                </button>
+<button class="px-4 py-2 rounded-full border border-[#181113]/10 bg-white text-[#181113]/70 text-sm font-medium hover:border-primary transition-all">
+                                    Nausea
+                                </button>
+<button class="px-4 py-2 rounded-full border border-dashed border-primary/40 text-primary text-sm font-medium hover:bg-primary/5 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span> Add New
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Flow Level -->
+<section class="mb-10">
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+                        Flow Intensity
+                    </h2>
+<div class="flex gap-4">
+<button class="flex-1 py-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm flex flex-col items-center">
+<span class="font-bold text-lg">Light</span>
+<span class="text-xs text-[#181113]/50">Spotting only</span>
+</button>
+<button class="flex-1 py-4 rounded-xl border-2 border-primary bg-primary/5 transition-all shadow-sm flex flex-col items-center">
+<span class="font-bold text-lg">Medium</span>
+<span class="text-xs text-primary/70">Regular flow</span>
+</button>
+<button class="flex-1 py-4 rounded-xl border-2 border-transparent bg-white hover:border-primary/30 transition-all shadow-sm flex flex-col items-center">
+<span class="font-bold text-lg">Heavy</span>
+<span class="text-xs text-[#181113]/50">Frequent changes</span>
+</button>
+</div>
+</section>
+<!-- Daily Notes -->
+<section class="mb-12">
+<h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                        Journal Entry
+                    </h2>
+<textarea class="w-full rounded-xl border-primary/10 bg-white focus:ring-primary focus:border-primary p-4 h-32 placeholder:text-[#181113]/30" placeholder="Write down any reflections, sleep quality, or specific observations about your day..."></textarea>
+</section>
+<!-- Action Button -->
+<div class="flex flex-col items-center gap-4 mb-20">
+<button class="w-full max-w-md bg-primary text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">favorite</span>
+                        Save Daily Log
+                    </button>
+<p class="text-sm text-[#181113]/40 font-medium">Logged data is private and encrypted.</p>
+</div>
+</div>
+</main>
+<!-- Footer Visual -->
+<footer class="w-full bg-white py-12 px-10 border-t border-primary/5 mt-auto">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-4">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#181113] text-lg font-bold">LUNIVA</h2>
+</div>
+<p class="text-sm text-[#181113]/60">Empowering women with personalized cycle insights and supportive community care.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181113]">Platform</h4>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Predictor</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Health Hub</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181113]">Resources</h4>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Medical Library</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Teen Guide</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Menopause</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181113]">Community</h4>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Forums</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Expert Q&amp;A</a>
+<a class="text-sm text-[#181113]/60 hover:text-primary" href="#">Stories</a>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-primary/5 text-center text-xs text-[#181113]/30 font-medium">
+                © 2023 LUNIVA Health. All rights reserved. Designed for wellbeing.
+            </div>
+</footer>
+</div>
+</div>
+</body></html>

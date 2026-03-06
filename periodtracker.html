@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUNIVA | Period Tracker Calendar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eb477e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                        "fertile": "#8ecae6",
+                        "ovulation": "#a2d2ff",
+                        "predicted": "#fbc4ab",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-4 lg:px-40 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">LUNIVA</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Calendar</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Insights</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<div class="flex gap-3">
+<button class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture showing a smiling woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChxWmyaFETfogQCgMZxTod0MIaDmiCWbQo_ciMSXUgXw0_F3--Fq27VeB9WbaEOIxmT14JbWsU_ukmRXH_wA2iONJry2irPBxq2luL7PWklM1mUtkm4WYm7vMMengnFclMuFOBr-UzsfuZfqI_CAXR7qTc4FWa4KAZgih60YZtthi7HJQCGMxpE3wcPAmn7RJKALVRwmSJC9MJ6C1vN2JaZ3oIcHiqpzfJKDd3UZ0oDeu-EyNv7slC4F7Y3jQhMRGVy58ueKvb8XY");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 lg:px-40 py-8 max-w-[1440px] mx-auto w-full">
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="flex-1 space-y-6">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Cycle Calendar</h1>
+<p class="text-slate-500 dark:text-slate-400">Tracking your journey, day by day.</p>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-background-dark/40 p-1.5 rounded-xl border border-primary/10 shadow-sm">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="px-4 font-bold text-lg text-slate-800 dark:text-slate-200">October 2023</span>
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900/50 rounded-xl p-6 shadow-xl shadow-primary/5 border border-primary/5">
+<div class="calendar-grid mb-4">
+<div class="text-center text-sm font-bold text-slate-400 py-3">SUN</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">MON</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">TUE</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">WED</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">THU</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">FRI</div>
+<div class="text-center text-sm font-bold text-slate-400 py-3">SAT</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">24</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">25</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">26</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">27</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">28</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">29</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">30</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">1</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">2</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">3</span>
+<div class="flex justify-center"><span class="material-symbols-outlined text-yellow-400 text-lg">mood</span></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-primary/5">
+<span class="text-right text-primary font-bold">4</span>
+<div class="flex justify-center"><div class="size-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40"><span class="material-symbols-outlined text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-primary/5">
+<span class="text-right text-primary font-bold">5</span>
+<div class="flex justify-center"><div class="size-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40"><span class="material-symbols-outlined text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-primary/5">
+<span class="text-right text-primary font-bold">6</span>
+<div class="flex justify-center"><div class="size-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40"><span class="material-symbols-outlined text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-primary/5">
+<span class="text-right text-primary font-bold">7</span>
+<div class="flex justify-center"><div class="size-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40"><span class="material-symbols-outlined text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">8</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">9</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">10</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">11</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">12</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">13</span>
+</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">14</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-blue-50/50">
+<span class="text-right text-blue-500 font-medium">15</span>
+<div class="flex justify-center"><div class="size-3 bg-blue-300 rounded-full opacity-60"></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-blue-50/50">
+<span class="text-right text-blue-500 font-medium">16</span>
+<div class="flex justify-center"><div class="size-3 bg-blue-300 rounded-full opacity-60"></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-blue-100/50">
+<span class="text-right text-blue-600 font-bold">17</span>
+<div class="flex justify-center"><span class="material-symbols-outlined text-blue-400">filter_vintage</span></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-blue-50/50">
+<span class="text-right text-blue-500 font-medium">18</span>
+<div class="flex justify-center"><div class="size-3 bg-blue-300 rounded-full opacity-60"></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-blue-50/50">
+<span class="text-right text-blue-500 font-medium">19</span>
+<div class="flex justify-center"><div class="size-3 bg-blue-300 rounded-full opacity-60"></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">20</span>
+</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">21</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">22</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">23</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">24</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">25</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">26</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between border-2 border-primary rounded-lg shadow-inner">
+<span class="text-right text-primary font-bold">27</span>
+<div class="flex items-center justify-center h-full pb-6">
+<span class="text-xs bg-primary text-white px-2 py-0.5 rounded-full">TODAY</span>
+</div>
+</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between">
+<span class="text-right text-slate-600">28</span>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-orange-50/30">
+<span class="text-right text-orange-400 font-medium">29</span>
+<div class="flex justify-center items-center h-full"><div class="size-10 border-2 border-dashed border-orange-200 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-orange-200 text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-orange-50/30">
+<span class="text-right text-orange-400 font-medium">30</span>
+<div class="flex justify-center items-center h-full"><div class="size-10 border-2 border-dashed border-orange-200 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-orange-200 text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 p-2 flex flex-col justify-between bg-orange-50/30">
+<span class="text-right text-orange-400 font-medium">31</span>
+<div class="flex justify-center items-center h-full"><div class="size-10 border-2 border-dashed border-orange-200 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-orange-200 text-sm">water_drop</span></div></div>
+</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">1</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">2</div>
+<div class="h-24 md:h-32 border-t border-r border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">3</div>
+<div class="h-24 md:h-32 border-t border-slate-50 dark:border-slate-800 flex items-start justify-end p-2 text-slate-300">4</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/10 items-center justify-center md:justify-start">
+<div class="flex items-center gap-2">
+<div class="size-5 bg-primary rounded-full"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Period</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 border-2 border-dashed border-orange-300 rounded-full"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Predicted</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 bg-blue-300/40 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-blue-500">filter_vintage</span></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Ovulation</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 bg-blue-100 rounded-full"></div>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Fertile Window</span>
+</div>
+</div>
+</div>
+<div class="lg:w-80 space-y-6">
+<div class="bg-primary text-white p-6 rounded-2xl shadow-lg shadow-primary/30 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-sm opacity-90 font-medium">Next Period In</p>
+<h3 class="text-5xl font-black my-2">2 Days</h3>
+<p class="text-xs font-light italic">Based on your last 3 cycles</p>
+<button class="mt-6 w-full bg-white text-primary py-3 rounded-xl font-bold hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-md">
+<span class="material-symbols-outlined">edit_square</span>
+                                    Log Symptoms
+                                </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[150px]">calendar_month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-primary/5 shadow-sm space-y-4">
+<h4 class="font-bold text-slate-800 dark:text-white">Quick Insights</h4>
+<div class="flex items-center gap-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+<div class="bg-blue-500 text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">info</span>
+</div>
+<p class="text-sm text-blue-800 dark:text-blue-300 leading-tight">
+                                    You're currently in your <strong>Luteal Phase</strong>.
+                                </p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">Avg Cycle Length</span>
+<span class="font-bold text-slate-800 dark:text-slate-200">28 Days</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">Avg Period Duration</span>
+<span class="font-bold text-slate-800 dark:text-slate-200">5 Days</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-6 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="size-12 bg-white dark:bg-slate-900 rounded-full flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<h5 class="font-bold text-slate-700 dark:text-slate-300">Tip of the Day</h5>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Drink plenty of water today! Proper hydration can help reduce bloating and muscle cramps.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="px-4 lg:px-40 py-10 border-t border-slate-200 dark:border-slate-800 mt-12 bg-white dark:bg-background-dark">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-primary/50 grayscale hover:grayscale-0 transition-all cursor-default">
+<span class="material-symbols-outlined">water_drop</span>
+<span class="font-bold text-lg tracking-tighter">LUNIVA</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Medical Disclaimer</a>
+<a class="text-xs text-slate-400 hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<p class="text-xs text-slate-400">© 2023 Luniva Health Platform</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

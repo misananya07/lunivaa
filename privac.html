@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUNIVA | Settings and Privacy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eb477e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181113] antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<h2 class="text-[#181113] text-xl font-bold leading-tight tracking-[-0.015em] uppercase">LUNIVA</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-[#181113] hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-[#181113] hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Health Log</a>
+<a class="text-[#181113] hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Community</a>
+<a class="text-[#181113] hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Insights</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-xl bg-primary/5 text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-[1px] bg-primary/10 mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture of a young woman smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDORZPckqpdRdGygP8Kj80DCaCqcfg3-ssJILssKQCDUeEyJsLj9JEl1URa21B9rrIlslTxjFDe6orEPrwPcFFpg70HDZZaOmYBdKmWoGd73Ely-exWpby6o_m-FlAsBX0ZPaa84IaH5c_wFuXcWNFPvaCScDhZ3_W6EkBj2HZlwob-y0_asVgXY91DMiPEzz63m74PmUCwGZ662_WbHkhGj_liQZXrTdF-8ovY-8jUXQenhLtArwkyWTS_m8cpug3S3QtVD31BCPU");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 md:px-10 py-10">
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-72 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black text-[#181113] tracking-tight">Settings</h1>
+<p class="text-[#88636f] text-sm">Personalize your safe space</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined fill-icon">person</span>
+<span class="text-sm font-semibold">Profile</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-[#181113] hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-[#181113] hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary">shield_person</span>
+<span class="text-sm font-medium">Privacy &amp; Security</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-[#181113] hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary">palette</span>
+<span class="text-sm font-medium">Theme</span>
+</a>
+<div class="h-[1px] bg-primary/10 my-4"></div>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-[#181113] hover:bg-primary/5 transition-all" href="#">
+<span class="material-symbols-outlined text-primary/60 group-hover:text-primary">help_center</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</a>
+</nav>
+<!-- Privacy Status Card -->
+<div class="mt-4 p-5 bg-green-50 rounded-2xl border border-green-100 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-green-700">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+<span class="text-xs font-bold uppercase tracking-wider">Privacy Secured</span>
+</div>
+<p class="text-xs text-green-800/70 leading-relaxed">
+                            Your health data is end-to-end encrypted and never shared without your consent.
+                        </p>
+</div>
+</aside>
+<!-- Settings Content Area -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Section: Profile -->
+<section class="bg-white rounded-3xl p-8 shadow-sm border border-primary/5">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-3xl size-24 border-4 border-primary/10 ring-4 ring-background-light" data-alt="User profile avatar close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxl3z31bmHoI6eTdoXhi6_qGzNNGM6VRxkiDqVPfALojr7gASNy_x2lvzXnHIOUnVztOaqR55SAP7BLHm4z-r_v9UQUxutwibRjPgtvifRhBqlNsad6fMV7LfR_YiZ6CU4_Ar28nM-cvV9z1xlalJ26itZ7iFVKuIzgrqOgaGYLvEPn3TLe4EML-ZTjooQN3oipZ8gkn6BidxuCRTtKukQ7sByMezt5nSVDLekYOiKAVNrO0SiPBUePzgoSfwswEPYVI8HTJvmSPU");'></div>
+<button class="absolute -bottom-2 -right-2 size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<div>
+<h3 class="text-xl font-bold text-[#181113]">Alex Doe</h3>
+<p class="text-[#88636f] text-sm">alex.doe@example.com</p>
+<span class="inline-flex mt-2 px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest">Premium Member</span>
+</div>
+</div>
+<button class="bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 rounded-xl text-sm font-bold transition-all border border-primary/20">
+                                Save All Changes
+                            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-[#181113] px-1">First Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-primary/10 bg-background-light/50 focus:ring-primary focus:border-primary transition-all outline-none" type="text" value="Alex"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-[#181113] px-1">Last Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-primary/10 bg-background-light/50 focus:ring-primary focus:border-primary transition-all outline-none" type="text" value="Doe"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-[#181113] px-1">Typical Cycle Length (Days)</label>
+<input class="w-full px-4 py-3 rounded-xl border border-primary/10 bg-background-light/50 focus:ring-primary focus:border-primary transition-all outline-none" type="number" value="28"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-[#181113] px-1">Date of Birth</label>
+<input class="w-full px-4 py-3 rounded-xl border border-primary/10 bg-background-light/50 focus:ring-primary focus:border-primary transition-all outline-none" type="date" value="1995-05-15"/>
+</div>
+</div>
+</section>
+<!-- Section: Notifications -->
+<section class="bg-white rounded-3xl p-8 shadow-sm border border-primary/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+<h3 class="text-xl font-bold text-[#181113]">Notification Preferences</h3>
+</div>
+<div class="space-y-4">
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-background-light transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-sm">Period Reminders</span>
+<span class="text-xs text-[#88636f]">Get a nudge 2 days before your expected cycle.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-background-light transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-sm">Daily Health Tips</span>
+<span class="text-xs text-[#88636f]">Daily advice tailored to your current cycle phase.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-background-light transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-sm">Community Alerts</span>
+<span class="text-xs text-[#88636f]">Notify me when someone replies to my post.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Section: Data Privacy & Security -->
+<section class="bg-white rounded-3xl p-8 shadow-sm border border-primary/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">security</span>
+<h3 class="text-xl font-bold text-[#181113]">Data Privacy &amp; Security</h3>
+</div>
+<div class="flex flex-col gap-4">
+<div class="p-6 border border-primary/10 rounded-2xl flex items-start gap-4 hover:border-primary/30 transition-all cursor-pointer">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">key</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Two-Factor Authentication</h4>
+<p class="text-xs text-[#88636f] mt-1 leading-relaxed">Add an extra layer of security to your account. Currently disabled.</p>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest mt-1">Setup</button>
+</div>
+<div class="p-6 border border-primary/10 rounded-2xl flex items-start gap-4 hover:border-primary/30 transition-all cursor-pointer">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">download</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Export My Health Data</h4>
+<p class="text-xs text-[#88636f] mt-1 leading-relaxed">Download a copy of your cycle history and symptoms in CSV format.</p>
+</div>
+<button class="text-primary font-bold text-xs uppercase tracking-widest mt-1">Download</button>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-primary/10">
+<h4 class="font-bold text-red-500 text-sm mb-4">Danger Zone</h4>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 bg-red-50 rounded-2xl border border-red-100">
+<div class="flex flex-col gap-1">
+<span class="font-bold text-sm text-red-700">Delete Account</span>
+<span class="text-xs text-red-600/70 leading-relaxed">Permanently delete your account and all associated data. This action cannot be undone.</span>
+</div>
+<button class="px-6 py-2 rounded-xl bg-white border border-red-200 text-red-600 font-bold text-xs hover:bg-red-50 transition-all">Delete Forever</button>
+</div>
+</div>
+</section>
+<!-- Section: Theme Selection -->
+<section class="bg-white rounded-3xl p-8 shadow-sm border border-primary/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="text-xl font-bold text-[#181113]">Appearance</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Theme Card -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-2xl border-2 border-primary bg-primary/5 ring-4 ring-primary/5">
+<div class="w-full aspect-video rounded-lg bg-background-light overflow-hidden border border-black/5 p-2">
+<div class="h-2 w-1/2 bg-primary/20 rounded-full mb-2"></div>
+<div class="flex gap-1 mb-2">
+<div class="size-3 rounded-full bg-primary/40"></div>
+<div class="size-3 rounded-full bg-primary/40"></div>
+<div class="size-3 rounded-full bg-primary/40"></div>
+</div>
+<div class="h-10 w-full bg-white rounded-md shadow-sm"></div>
+</div>
+<span class="text-xs font-bold text-[#181113]">Light Mode</span>
+</button>
+<!-- Theme Card -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-2xl border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-full aspect-video rounded-lg bg-background-dark overflow-hidden border border-white/5 p-2">
+<div class="h-2 w-1/2 bg-white/10 rounded-full mb-2"></div>
+<div class="flex gap-1 mb-2">
+<div class="size-3 rounded-full bg-white/10"></div>
+<div class="size-3 rounded-full bg-white/10"></div>
+<div class="size-3 rounded-full bg-white/10"></div>
+</div>
+<div class="h-10 w-full bg-black/40 rounded-md shadow-sm"></div>
+</div>
+<span class="text-xs font-bold text-[#181113]/60">Dark Mode</span>
+</button>
+<!-- Theme Card -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-2xl border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden flex border border-black/5">
+<div class="flex-1 bg-background-light p-2">
+<div class="h-2 w-full bg-primary/10 rounded-full"></div>
+</div>
+<div class="flex-1 bg-background-dark p-2">
+<div class="h-2 w-full bg-white/10 rounded-full"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-[#181113]/60">System Auto</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer Footer -->
+<footer class="mt-auto border-t border-primary/5 bg-white py-10">
+<div class="max-w-[1200px] mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-50">
+<div class="size-5 flex items-center justify-center bg-primary rounded-md text-white">
+<span class="material-symbols-outlined text-[10px]">water_drop</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-widest">LUNIVA</span>
+</div>
+<div class="flex gap-8 text-xs font-medium text-[#88636f]">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Cookie Settings</a>
+</div>
+<p class="text-xs text-[#88636f]/60">© 2024 LUNIVA Health. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</body></html>
